@@ -1,29 +1,16 @@
 package org.notima.test.util;
 
-import java.text.ParseException;
 import java.util.Calendar;
-
-import junit.framework.Assert;
-import junit.framework.TestCase;
 
 import org.junit.Test;
 import org.notima.util.NotimaUtil;
 
+import junit.framework.Assert;
+import junit.framework.TestCase;
+
 
 public class TestBgUtil extends TestCase {
 
-	@Test
-	public void testGetDateString() {
-		
-		// Create specific date
-		Calendar cal = Calendar.getInstance();
-		cal.set(Calendar.YEAR, 2010);
-		cal.set(Calendar.MONTH, 1); // February
-		cal.set(Calendar.DATE, 19);
-		String result = NotimaUtil.getDateString(cal.getTime());
-		Assert.assertEquals("100219", result);
-		
-	}
 
 	@Test
 	public void testRemoveBlanks() {
@@ -32,36 +19,6 @@ public class TestBgUtil extends TestCase {
 		String expected = "SE12323120192";
 		
 		Assert.assertEquals(expected, NotimaUtil.removeBlanks(test));
-		
-	}
-	
-	@Test
-	public void testParseDateString() {
-		
-		try {
-			
-			java.util.Date date = NotimaUtil.parseDateString("091231");
-			Calendar cal = Calendar.getInstance();
-			cal.set(Calendar.YEAR, 2009);
-			cal.set(Calendar.MONTH, 11); // December
-			cal.set(Calendar.DATE, 31);
-			cal.set(Calendar.HOUR, 0);
-			cal.set(Calendar.AM_PM, Calendar.AM);
-			cal.set(Calendar.MINUTE, 0);
-			cal.set(Calendar.SECOND, 0);
-			cal.set(Calendar.MILLISECOND, 0);
-			Assert.assertEquals(date, cal.getTime());
-			
-			// Test "Genast"
-			date = NotimaUtil.parseDateString("GENAST");
-			Assert.assertNull(date);
-			// Test "000000"
-			date = NotimaUtil.parseDateString("000000");
-			Assert.assertNull(date);
-			
-		} catch (ParseException pe) {
-			Assert.fail(pe.getMessage());
-		}
 		
 	}
 
@@ -94,22 +51,6 @@ public class TestBgUtil extends TestCase {
 
 	@Test
 	public void testValidateBankgiro() {
-	}
-
-	@Test
-	public void testFormatBg() {
-		
-		String result = NotimaUtil.formatBg("2703029");
-		Assert.assertEquals("270-3029", result);
-		
-	}
-
-	@Test
-	public void testFormatPg() {
-		
-		String actual = NotimaUtil.formatPg("2093280");
-		Assert.assertEquals("209328-0", actual);
-		
 	}
 
 	@Test
