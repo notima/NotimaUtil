@@ -40,6 +40,7 @@ public class LocalDateUtils {
     /**
      * Prints a date range string using dash '_' as default range indicator. If start and end date are the same, only
      * one date is printed.
+     * If both dates are null, an empty string is returned.
      * 
      * @param startDate			Start date
      * @param endDate			End date
@@ -57,6 +58,14 @@ public class LocalDateUtils {
     		rangeSeparator = "_";
     	}
     	StringBuffer buf = new StringBuffer();
+    	if (startDate==null && endDate!=null) {
+    		startDate = endDate;
+    	}
+    	if (endDate==null && startDate!=null) {
+    		endDate = startDate;
+    	}
+    	if (startDate==null && endDate==null) return "";
+    	
     	if (startDate.equals(endDate)) {
     		buf.append(dtf.format(startDate));
     	} else {
