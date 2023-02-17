@@ -47,7 +47,7 @@ public class LocalDateUtils {
      * @param dtf				DateFormat. If none is selected (null), default locale (short) is used.
      * @param rangeSeparator	Separates the start date from the end date. If null, _ is used.
      * 
-     * @return
+     * @return		The date range as a string.
      */
     public static String getDateRangeStr(Date startDate, Date endDate, DateFormat dtf, String rangeSeparator) {
     	

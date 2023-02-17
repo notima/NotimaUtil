@@ -8,7 +8,7 @@ public class FileUtils {
 	/**
 	 * Remove unwanted characters from filename
 	 * 
-	 * @param suggestedFileName
+	 * @param suggestedFileName		Suggested file name.
 	 * @return		A cleaned filename
 	 */
 	public static String fileNameSafe(String suggestedFileName) {

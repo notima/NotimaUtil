@@ -75,9 +75,9 @@ public class TaxIdFormatter {
      * 						Note, this can be lengthy.
      * @param taxId			The actual tax id.
      * @param dstFormat		The destination format.
-     * @return
-     * @throws UnknownTaxIdFormatException 
-     * @throws InvalidTaxIdFormatException 
+     * @return				The tax id in the destination format
+     * @throws UnknownTaxIdFormatException 	if the dstFormat is not recognized.
+     * @throws InvalidTaxIdFormatException 	If the tax ID can't be parsed.
      */
     public static String printTaxId(String srcFormat, String taxId, String dstFormat) throws UnknownTaxIdFormatException, InvalidTaxIdFormatException {
     	

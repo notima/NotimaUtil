@@ -60,7 +60,7 @@ public class TaxIdStructure {
 	 * Checks whether the tax id could be a valid date. Applies only 
 	 * on Swedish tax ids.
 	 * 
-	 * @return
+	 * @return			If the tax id (for physical persons) is a valid date.
 	 */
 	public boolean isValidDateSE() {
 		int year = Integer.parseInt(prefix);
@@ -84,8 +84,8 @@ public class TaxIdStructure {
 	/**
 	 * 
 	 * 
-	 * @param dstFormat
-	 * @return
+	 * @param dstFormat		The format use to print the tax id
+	 * @return				The tax id in the given format.
 	 */
 	public String printTaxId(String dstFormat) {
 

@@ -7,7 +7,7 @@ public class ListUtil {
 	/**
 	 * Converts a list to a comma separated string.
 	 * 
-	 * @param list
+	 * @param list		The list to convert
 	 * @return	A string separated by comma.
 	 */
 	public static String ListToCommaSeparatedString(List<?> list) {
