@@ -11,7 +11,8 @@ public class BankDateUtil {
     private static LocalDate returnDate;
 
 
-    //args should be country code, only SE works atm.
+    //args should be for example {"SE", "2023-01-01", "10"} where SE is the country code, 2023-01-01 is the starting date
+    //and 10 is the how many bankdays that should be added to the start date.
     public static LocalDate bankDateCalculator(String[] args){
 
         readArgs(args);

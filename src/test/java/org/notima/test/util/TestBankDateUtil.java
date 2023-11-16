@@ -20,11 +20,6 @@ public class TestBankDateUtil {
 
         assertEquals(expectedDate, resultDate);
 
-        // Add assertions for the expected result based on test scenarios
-        // For example:
-        // assertEquals(expectedDate, resultDate);
     }
-
-    // Add more test methods for other functionalities and scenarios
 }
 
