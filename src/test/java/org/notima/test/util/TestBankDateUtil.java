@@ -11,12 +11,12 @@ public class TestBankDateUtil {
     @Test
     public void testBankDateCalculatorForSE() {
 
-        String[] args = {"SE", "2023-01-01", "69"};
+        String[] args = {"SE", "2023-01-01", "70"};
         LocalDate resultDate = BankDateUtil.bankDateCalculator(args);
         assertNotNull(resultDate);
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate expectedDate = LocalDate.parse("2023-04-11", formatter);
+        LocalDate expectedDate = LocalDate.parse("2023-04-12", formatter);
 
         assertEquals(expectedDate, resultDate);
 
