@@ -1,6 +1,5 @@
 package org.notima.util;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -31,35 +30,15 @@ public class BankDateUtil {
 
 	private static void readArgs(String[] args) {
 		
-        if (args == null || args.length < 1) {
-            System.out.println("Can only have and must have 1 argument");
+        if (args == null || args.length != 3) {
+            System.out.println("Can only have and must have 3 arguments");
             System.exit(1);
         }
     
         countryCode = args[0];
-    
-        try (Scanner scanner = new Scanner(System.in)) {
-            boolean validDate = false;
-            while (!validDate) {
-                System.out.println("Enter the start date (yyyy-MM-dd)");
-                String inputDate = scanner.nextLine();
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                sdf.setLenient(false);
-    
-                try {
-                    Date date = sdf.parse(inputDate);
-                    startDate = sdf.format(date);
-                    validDate = true;
-                } catch (Exception e) {
-                    System.out.println("Invalid date format. Please use yyyy-MM-dd.");
-                }
-            }
-    
-            System.out.println("Enter the amount of days you want to check");
-            days = Integer.parseInt(scanner.nextLine());
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-        }
+        startDate = args[1];
+        days = Integer.parseInt(args[2]);
+
 	}
 
     protected static void calculateNewDate(List<String> holidays) {
