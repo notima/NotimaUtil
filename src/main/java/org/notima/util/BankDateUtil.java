@@ -4,6 +4,19 @@ import java.util.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/*
+args should be for example {"SE", "2023-01-01", "10"} where SE is the country code, 2023-01-01 is the 
+starting date and 10 is the how many bankdays that should be added to the start date.
+
+example use:
+
+String[] args = {"SE", 2023-01-01", "70"}
+LocalDate resultDate = BankDateUtil.bankdDateCalculator(args);
+System.out.println(resultDate);
+
+expected output: 2023-04-12
+
+*/
 public class BankDateUtil {
     private static String countryCode;
     protected static String startDate;
@@ -11,9 +24,7 @@ public class BankDateUtil {
     private static LocalDate returnDate;
 
 
-    //args should be for example {"SE", "2023-01-01", "10"} where SE is the country code, 2023-01-01 is the starting date
-    //and 10 is the how many bankdays that should be added to the start date.
-    public static LocalDate bankDateCalculator(String[] args){
+    public static String bankDateCalculator(String[] args){
 
         readArgs(args);
 
@@ -26,7 +37,7 @@ public class BankDateUtil {
                 System.out.println("Not a valid country code");
                 break;
         }
-        return returnDate;
+        return returnDate.toString();
     }
 
 	private static void readArgs(String[] args) {
@@ -60,7 +71,6 @@ public class BankDateUtil {
                 }
                 i++;
             }
-            System.out.println("New date after " + days + " bankdays: " + date.format(formatter));
             returnDate = date;
         } catch (Exception e) {
             e.printStackTrace();
