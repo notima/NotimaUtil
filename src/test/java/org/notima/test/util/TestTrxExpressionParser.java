@@ -1,8 +1,6 @@
 package org.notima.test.util;
 
-import static org.junit.Assert.*;
-
-import java.util.List;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.Before;
@@ -11,10 +9,13 @@ import org.notima.util.TrxExpressionParser;
 
 public class TestTrxExpressionParser {
 
+	public TrxExpressionParser testParser;
+	
 	public String[] testExamples = {
 		"1",
 		"2,4-6",
-		"56-45"
+		"56-45",
+		"1-160"
 	};
 	
 	@Before
@@ -27,15 +28,13 @@ public class TestTrxExpressionParser {
 
 	@Test
 	public void test() {
-
-		List<Integer> result;
 		
 		for (String s : testExamples) {
-			TrxExpressionParser test = new TrxExpressionParser(s);
+			testParser = new TrxExpressionParser(s);
 			try {
-				result = test.parseTrxExpression();
+				testParser.parseTrxExpression();
 				System.out.print(s + " => ");
-				printResult(result);
+				printResult();
 			} catch (Exception ee) {
 				ee.printStackTrace();
 				fail(ee.getMessage());
@@ -45,19 +44,12 @@ public class TestTrxExpressionParser {
 	}
 
 	
-	private void printResult(List<Integer> r) {
+	private void printResult() {
 		
-		if (r==null) {
+		if (testParser==null) {
 			System.out.println("Result was null");
 		} else {
-			if (r.size()==0) {
-				System.out.println("Result was empty");
-			} else {
-				for (Integer ii : r) {
-					System.out.print(ii.toString() + " ");
-				}
-				System.out.println();
-			}
+			System.out.println(testParser.toString());
  		}
 		
 	}
