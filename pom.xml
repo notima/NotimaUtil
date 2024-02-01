@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.notima</groupId>
 	<artifactId>notima-util</artifactId>
-	<version>0.0.5-SNAPSHOT</version>
+	<version>0.0.5</version>
 	<packaging>bundle</packaging>
 	<name>Notima Util</name>
 	<description>A general utility library</description>
@@ -98,7 +98,7 @@
 					<execution>
 						<id>sign-artifacts</id>
 						<!-- Change below to 'verify' in non-snapshot versions -->
-						<phase>deploy</phase>
+						<phase>verify</phase>
 						<goals>
 							<goal>sign</goal>
 						</goals>
