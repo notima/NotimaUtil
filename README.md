@@ -8,10 +8,10 @@ Releases are found in Maven-Central repository and can easliy be used by adding 
     <dependency>
         <groupId>org.notima</groupId>
         <artifactId>notima-util</artifactId>
-        <version>0.0.4</version>
+        <version>0.0.5</version>
     </dependency>
 
     
 Or in karaf
 
-	install -s mvn:org.notima/notima-util/0.0.4
+	install -s mvn:org.notima/notima-util/0.0.5
