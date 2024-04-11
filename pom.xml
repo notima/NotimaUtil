@@ -98,7 +98,7 @@
 					<execution>
 						<id>sign-artifacts</id>
 						<!-- Change below to 'verify' in non-snapshot versions -->
-						<phase>verify</phase>
+						<phase>deploy</phase>
 						<goals>
 							<goal>sign</goal>
 						</goals>
