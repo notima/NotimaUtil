@@ -3,14 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.notima</groupId>
 	<artifactId>notima-util</artifactId>
-	<version>0.0.6</version>
+	<version>0.0.7</version>
 	<packaging>bundle</packaging>
 	<name>Notima Util</name>
 	<description>A general utility library</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<gson.version>2.8.9</gson.version>
+		<gson.version>2.10.1</gson.version>
 	</properties>
 
 	<distributionManagement>
@@ -33,9 +33,17 @@
 		</dependency>
 	
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.13.1</version>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>5.10.1</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.junit.vintage</groupId>
+			<artifactId>junit-vintage-engine</artifactId>
+			<version>5.10.1</version>
+			<scope>test</scope>
 		</dependency>
 		
     </dependencies>
@@ -46,17 +54,17 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.0.2</version>
+				<version>3.10.1</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>21</source>
+					<target>21</target>
 				</configuration>
 			</plugin>
 
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
-				<version>4.2.0</version>
+				<version>5.1.8</version>
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
@@ -71,7 +79,7 @@
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.7</version>
+				<version>1.6.13</version>
 				<extensions>true</extensions>
 				<configuration>
 					<serverId>ossrh</serverId>
@@ -83,7 +91,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version>
+				<version>3.5.0</version>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -97,7 +105,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.5</version>
+				<version>3.0.1</version>
 				<executions>
 					<execution>
 						<id>sign-artifacts</id>
@@ -140,13 +148,13 @@
 		<developer>
 			<name>Oliver Norin</name>
 			<email>oliver@notima.se</email>
-			<organization>Notima System Integration AB</organization>
+			<organization>Notima Energy Intelligence AB</organization>
 			<organizationUrl>https://github.com/notima</organizationUrl>
 		</developer>
 		<developer>
 			<name>Daniel Tamm</name>
 			<email>daniel@notima.se</email>
-			<organization>Notima System Integration AB</organization>
+			<organization>Notima Energy Intelligence AB</organization>
 			<organizationUrl>https://github.com/notima</organizationUrl>
 		</developer>
 	</developers>
