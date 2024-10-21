@@ -62,7 +62,8 @@
 					<instructions>
 						<Export-Package>
 							org.notima.util,
-							org.notima.util.json
+							org.notima.util.json,
+							org.notima.util.comm
 						</Export-Package>
 					</instructions>
 				</configuration>
