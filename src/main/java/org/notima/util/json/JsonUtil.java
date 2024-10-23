@@ -4,6 +4,7 @@ import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
@@ -41,6 +42,7 @@ public class JsonUtil {
 		gsonBuilder.setFieldNamingPolicy(FieldNamingPolicy.IDENTITY);
 		gsonBuilder.setLenient();
 		gsonBuilder.registerTypeAdapter(LocalDate.class, new JsonLocalDateAdapter());
+		gsonBuilder.registerTypeAdapter(LocalDateTime.class, new JsonLocalDateTimeAdapter());
 	}
 
 	public static DateFormat getDateFormat() {
