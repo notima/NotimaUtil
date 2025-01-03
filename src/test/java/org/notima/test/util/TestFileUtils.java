@@ -22,5 +22,18 @@ public class TestFileUtils {
 		assertEquals("ABadnotsoGoodfile-n_ame.txt", goodFileName);
 		
 	}
+	
+	@Test
+	public void testInsertDirectory() {
+		
+	      // Example usage
+        String originalPath = "/home/user/documents/file.txt";
+        String newDirName = "processed";
+        
+        String modifiedPath = FileUtils.insertDirectory(originalPath, newDirName);
+        System.out.println("Modified Path: " + modifiedPath);
+        assertEquals("/home/user/documents/processed/file.txt", modifiedPath);		
+		
+	}
 
 }
