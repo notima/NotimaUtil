@@ -39,7 +39,7 @@ public class SetUtil {
 	 */
 	public static List<String> setToStringList(Set<?> set) {
 
-		List<String> result = new ArrayList();
+		List<String> result = new ArrayList<String>();
 		
 		if (set==null || set.size()==0) 
 			return result;
