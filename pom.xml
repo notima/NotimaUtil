@@ -71,7 +71,9 @@
 						<Export-Package>
 							org.notima.util,
 							org.notima.util.json,
-							org.notima.util.comm
+							org.notima.util.comm,
+							org.notima.util.date,
+							org.notima.util.date.se
 						</Export-Package>
 					</instructions>
 				</configuration>
